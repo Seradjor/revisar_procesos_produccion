@@ -1,28 +1,28 @@
 <odoo>
   <data>
     <!-- explicit list view definition -->
-<!--
-    <record model="ir.ui.view" id="revisar_procesos_produccion.list">
-      <field name="name">revisar_procesos_produccion list</field>
-      <field name="model">revisar_procesos_produccion.revisar_procesos_produccion</field>
+
+    <record model="ir.ui.view" id="revisar_procesos_produccion.proceso_window_tree">
+      <field name="name">Procesos</field>
+      <field name="model">revisar_procesos_produccion.proceso</field>
       <field name="arch" type="xml">
         <tree>
+          <field name="id_process"/>
           <field name="name"/>
-          <field name="value"/>
-          <field name="value2"/>
+          <field name="process_description"/>
         </tree>
       </field>
     </record>
--->
+
 
     <!-- actions opening views on models -->
-<!--
-    <record model="ir.actions.act_window" id="revisar_procesos_produccion.action_window">
-      <field name="name">revisar_procesos_produccion window</field>
-      <field name="res_model">revisar_procesos_produccion.revisar_procesos_produccion</field>
+
+    <record model="ir.actions.act_window" id="revisar_procesos_produccion.action_window_proceso">
+      <field name="name">Procesos</field>
+      <field name="res_model">revisar_procesos_produccion.proceso</field>
       <field name="view_mode">tree,form</field>
     </record>
--->
+
 
     <!-- server action to the one above -->
 <!--
@@ -41,20 +41,21 @@
 -->
 
     <!-- Top menu item -->
-<!--
-    <menuitem name="revisar_procesos_produccion" id="revisar_procesos_produccion.menu_root"/>
--->
+
+    <menuitem name="Revisar procesos produccion" id="revisar_procesos_produccion.menu_root"/>
+
     <!-- menu categories -->
-<!--
-    <menuitem name="Menu 1" id="revisar_procesos_produccion.menu_1" parent="revisar_procesos_produccion.menu_root"/>
-    <menuitem name="Menu 2" id="revisar_procesos_produccion.menu_2" parent="revisar_procesos_produccion.menu_root"/>
--->
+
+    <menuitem name="Inicio" id="revisar_procesos_produccion.menu_1" parent="revisar_procesos_produccion.menu_root"/>
+    <!-- <menuitem name="Menu 2" id="revisar_procesos_produccion.menu_2" parent="revisar_procesos_produccion.menu_root"/> -->
+
     <!-- actions -->
-<!--
-    <menuitem name="List" id="revisar_procesos_produccion.menu_1_list" parent="revisar_procesos_produccion.menu_1"
-              action="revisar_procesos_produccion.action_window"/>
-    <menuitem name="Server to list" id="revisar_procesos_produccion" parent="revisar_procesos_produccion.menu_2"
-              action="revisar_procesos_produccion.action_server"/>
--->
+
+    <menuitem name="Procesos" id="revisar_procesos_produccion.proceso_list" parent="revisar_procesos_produccion.menu_1"
+              action="revisar_procesos_produccion.action_window_proceso"/>
+
+    <!-- <menuitem name="Server to list" id="revisar_procesos_produccion" parent="revisar_procesos_produccion.menu_2"
+              action="revisar_procesos_produccion.action_server"/> -->
+
   </data>
 </odoo>
