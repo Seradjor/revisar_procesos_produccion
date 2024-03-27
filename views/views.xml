@@ -2,6 +2,19 @@
   <data>
     <!-- explicit list view definition -->
 
+    <record model="ir.ui.view" id="revisar_procesos_produccion.revision_set_window_tree">
+      <field name="name">Revisiones</field>
+      <field name="model">revisar_procesos_produccion.revision_set</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="code"/>
+          <field name="state"/>
+          <field name="date"/>
+          <field name="description"/>
+        </tree>
+      </field>
+    </record>
+
     <record model="ir.ui.view" id="revisar_procesos_produccion.revision_window_tree">
       <field name="name">Revisión</field>
       <field name="model">revisar_procesos_produccion.revision</field>
@@ -43,6 +56,12 @@
 
 
     <!-- actions opening views on models -->
+
+    <record model="ir.actions.act_window" id="revisar_procesos_produccion.action_window_revision_set">
+      <field name="name">Revisiones</field>
+      <field name="res_model">revisar_procesos_produccion.revision_set</field>
+      <field name="view_mode">tree,form</field>
+    </record>
 
     <record model="ir.actions.act_window" id="revisar_procesos_produccion.action_window_revision">
       <field name="name">Revisión</field>
@@ -89,6 +108,9 @@
     <!-- <menuitem name="Menu 2" id="revisar_procesos_produccion.menu_2" parent="revisar_procesos_produccion.menu_root"/> -->
 
     <!-- actions -->
+
+    <menuitem name="Revisiones" id="revisar_procesos_produccion.revision_set_list" parent="revisar_procesos_produccion.menu_1"
+              action="revisar_procesos_produccion.action_window_revision_set"/>
 
     <menuitem name="Revisión" id="revisar_procesos_produccion.revision_list" parent="revisar_procesos_produccion.menu_1"
               action="revisar_procesos_produccion.action_window_revision"/>
