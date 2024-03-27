@@ -54,6 +54,18 @@
       </field>
     </record>
 
+    <record model="ir.ui.view" id="revisar_procesos_produccion.verification_window_tree">
+      <field name="name">Comprobaciones</field>
+      <field name="model">revisar_procesos_produccion.verification</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="code"/>
+          <field name="name"/>
+          <field name="description"/>
+        </tree>
+      </field>
+    </record>
+
 
     <!-- actions opening views on models -->
 
@@ -78,6 +90,12 @@
     <record model="ir.actions.act_window" id="revisar_procesos_produccion.action_window_process">
       <field name="name">Procesos</field>
       <field name="res_model">revisar_procesos_produccion.process</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="revisar_procesos_produccion.action_window_verification">
+      <field name="name">Comprobaciones</field>
+      <field name="res_model">revisar_procesos_produccion.verification</field>
       <field name="view_mode">tree,form</field>
     </record>
 
@@ -120,6 +138,9 @@
 
     <menuitem name="Procesos" id="revisar_procesos_produccion.process_list" parent="revisar_procesos_produccion.menu_1"
               action="revisar_procesos_produccion.action_window_process"/>
+
+    <menuitem name="Comprobaciones" id="revisar_procesos_produccion.verification_list" parent="revisar_procesos_produccion.menu_1"
+              action="revisar_procesos_produccion.action_window_verification"/>
 
     <!-- <menuitem name="Server to list" id="revisar_procesos_produccion" parent="revisar_procesos_produccion.menu_2"
               action="revisar_procesos_produccion.action_server"/> -->
