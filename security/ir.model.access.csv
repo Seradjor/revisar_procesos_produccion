@@ -1,2 +1,3 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_revisar_procesos_produccion_proceso,revisar_procesos_produccion.proceso,model_revisar_procesos_produccion_proceso,base.group_user,1,1,1,1
+access_revisar_procesos_produccion_process,revisar_procesos_produccion.process,model_revisar_procesos_produccion_process,base.group_user,1,1,1,1
+access_revisar_procesos_produccion_revision,revisar_procesos_produccion.revision,model_revisar_procesos_produccion_revision,base.group_user,1,1,1,1

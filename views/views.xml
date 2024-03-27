@@ -2,14 +2,28 @@
   <data>
     <!-- explicit list view definition -->
 
-    <record model="ir.ui.view" id="revisar_procesos_produccion.proceso_window_tree">
-      <field name="name">Procesos</field>
-      <field name="model">revisar_procesos_produccion.proceso</field>
+    <record model="ir.ui.view" id="revisar_procesos_produccion.revision_window_tree">
+      <field name="name">Revisión</field>
+      <field name="model">revisar_procesos_produccion.revision</field>
       <field name="arch" type="xml">
         <tree>
-          <field name="id_process"/>
+          <field name="code"/>
           <field name="name"/>
-          <field name="process_description"/>
+          <field name="responsable"/>
+          <field name="estado"/>
+          <field name="fecha"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="revisar_procesos_produccion.process_window_tree">
+      <field name="name">Procesos</field>
+      <field name="model">revisar_procesos_produccion.process</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="code"/>
+          <field name="name"/>
+          <field name="description"/>
         </tree>
       </field>
     </record>
@@ -17,9 +31,15 @@
 
     <!-- actions opening views on models -->
 
-    <record model="ir.actions.act_window" id="revisar_procesos_produccion.action_window_proceso">
+    <record model="ir.actions.act_window" id="revisar_procesos_produccion.action_window_revision">
+      <field name="name">Revisión</field>
+      <field name="res_model">revisar_procesos_produccion.revision</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="revisar_procesos_produccion.action_window_process">
       <field name="name">Procesos</field>
-      <field name="res_model">revisar_procesos_produccion.proceso</field>
+      <field name="res_model">revisar_procesos_produccion.process</field>
       <field name="view_mode">tree,form</field>
     </record>
 
@@ -51,8 +71,11 @@
 
     <!-- actions -->
 
-    <menuitem name="Procesos" id="revisar_procesos_produccion.proceso_list" parent="revisar_procesos_produccion.menu_1"
-              action="revisar_procesos_produccion.action_window_proceso"/>
+    <menuitem name="Revisión" id="revisar_procesos_produccion.revision_list" parent="revisar_procesos_produccion.menu_1"
+              action="revisar_procesos_produccion.action_window_revision"/>
+
+    <menuitem name="Procesos" id="revisar_procesos_produccion.process_list" parent="revisar_procesos_produccion.menu_1"
+              action="revisar_procesos_produccion.action_window_process"/>
 
     <!-- <menuitem name="Server to list" id="revisar_procesos_produccion" parent="revisar_procesos_produccion.menu_2"
               action="revisar_procesos_produccion.action_server"/> -->
