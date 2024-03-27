@@ -66,6 +66,18 @@
       </field>
     </record>
 
+    <record model="ir.ui.view" id="revisar_procesos_produccion.error_window_tree">
+      <field name="name">Errores</field>
+      <field name="model">revisar_procesos_produccion.error</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="code"/>
+          <field name="name"/>
+          <field name="description"/>
+        </tree>
+      </field>
+    </record>
+
 
     <!-- actions opening views on models -->
 
@@ -99,6 +111,11 @@
       <field name="view_mode">tree,form</field>
     </record>
 
+    <record model="ir.actions.act_window" id="revisar_procesos_produccion.action_window_error">
+      <field name="name">Errores</field>
+      <field name="res_model">revisar_procesos_produccion.error</field>
+      <field name="view_mode">tree,form</field>
+    </record>
 
     <!-- server action to the one above -->
 <!--
@@ -141,6 +158,9 @@
 
     <menuitem name="Comprobaciones" id="revisar_procesos_produccion.verification_list" parent="revisar_procesos_produccion.menu_1"
               action="revisar_procesos_produccion.action_window_verification"/>
+
+    <menuitem name="Errores" id="revisar_procesos_produccion.error_list" parent="revisar_procesos_produccion.menu_1"
+              action="revisar_procesos_produccion.action_window_error"/>
 
     <!-- <menuitem name="Server to list" id="revisar_procesos_produccion" parent="revisar_procesos_produccion.menu_2"
               action="revisar_procesos_produccion.action_server"/> -->

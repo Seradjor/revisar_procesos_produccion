@@ -5,3 +5,4 @@ from . import revision
 from . import revision_verification
 from . import revision_set
 from . import verification
+from . import error
