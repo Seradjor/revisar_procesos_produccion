@@ -10,8 +10,21 @@
           <field name="code"/>
           <field name="name"/>
           <field name="responsable"/>
-          <field name="estado"/>
-          <field name="fecha"/>
+          <field name="state"/>
+          <field name="date"/>
+        </tree>
+      </field>
+    </record>
+
+    <record model="ir.ui.view" id="revisar_procesos_produccion.revision_verification_window_tree">
+      <field name="name">Comprobación revisión</field>
+      <field name="model">revisar_procesos_produccion.revision_verification</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="code"/>
+          <field name="state"/>
+          <field name="error"/>
+          <field name="observation"/>
         </tree>
       </field>
     </record>
@@ -34,6 +47,12 @@
     <record model="ir.actions.act_window" id="revisar_procesos_produccion.action_window_revision">
       <field name="name">Revisión</field>
       <field name="res_model">revisar_procesos_produccion.revision</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <record model="ir.actions.act_window" id="revisar_procesos_produccion.action_window_revision_verification">
+      <field name="name">Comprobación revisión</field>
+      <field name="res_model">revisar_procesos_produccion.revision_verification</field>
       <field name="view_mode">tree,form</field>
     </record>
 
@@ -73,6 +92,9 @@
 
     <menuitem name="Revisión" id="revisar_procesos_produccion.revision_list" parent="revisar_procesos_produccion.menu_1"
               action="revisar_procesos_produccion.action_window_revision"/>
+
+    <menuitem name="Comprobación revisión" id="revisar_procesos_produccion.revision_verification_list" parent="revisar_procesos_produccion.menu_1"
+              action="revisar_procesos_produccion.action_window_revision_verification"/>
 
     <menuitem name="Procesos" id="revisar_procesos_produccion.process_list" parent="revisar_procesos_produccion.menu_1"
               action="revisar_procesos_produccion.action_window_process"/>

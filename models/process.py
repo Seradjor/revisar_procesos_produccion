@@ -12,4 +12,6 @@ class process(models.Model):
     name = fields.Char(required=True, string="Nombre proceso")
     description = fields.Text(string="Descripción del proceso")
 
-    revisions_ids = fields.One2many('revisar_procesos_produccion.revision','process_id')
+
+    # Relación con revision
+    revisions_ids = fields.One2many('revisar_procesos_produccion.revision','process_id', string="Revisiones")

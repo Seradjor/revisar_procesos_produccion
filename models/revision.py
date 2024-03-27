@@ -11,8 +11,13 @@ class revision(models.Model):
     code = fields.Char(required=True, size=5, string="Código")
     name = fields.Char(required=True, string="Nombre")
     responsable = fields.Char()
-    estado = fields.Selection([('0','Iniciada'),('1','En proceso'),('2','Terminada')],default = '0', required=True)
-    fecha = fields.Date(string="Fecha revisión")
+    state = fields.Selection([('0','Iniciada'),('1','En proceso'),('2','Terminada')],default = '0', required=True)
+    date = fields.Date(string="Fecha revisión")
 
-    process_id = fields.Many2one('revisar_procesos_produccion.process')
+
+    # Relación con process
+    process_id = fields.Many2one('revisar_procesos_produccion.process', string="Proceso")
     process_name = fields.Char(related='process_id.name')
+
+    # Relación con revision_verification
+    revision_verifications_ids = fields.One2many('revisar_procesos_produccion.revision_verification','revision_id', string="Comprobaciones")
