@@ -1,0 +1,14 @@
+<odoo>
+  <data>
+    <record model="revisar_procesos_produccion.process" id="revisar_procesos_produccion.process_LLE">
+      <field name="code">LLE</field>
+      <field name="name">Llenado</field>
+      <field name="description">Llenado del producto en el envase (botella) final. Corresponde al principio de línea.</field>
+    </record>
+    <record model="revisar_procesos_produccion.process" id="revisar_procesos_produccion.process_ETI">
+      <field name="code">ETI</field>
+      <field name="name">Etiquetado</field>
+      <field name="description">Colocación de etiquetas y contraetiquetas en botella.</field>
+    </record>
+  </data>
+</odoo>

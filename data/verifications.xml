@@ -1,0 +1,42 @@
+<odoo>
+  <data>
+    <!-- Comprobaciones llenado -->
+    <record model="revisar_procesos_produccion.verification" id="revisar_procesos_produccion.verification_LLE01">
+      <field name="code">LLE01</field>
+      <field name="name">Colocación botella</field>
+      <field name="description">La botella entra correctamente en la línea para su correcto llenado.</field>
+      <field name="process_id" ref="revisar_procesos_produccion.process_LLE"></field>
+    </record>
+    <record model="revisar_procesos_produccion.verification" id="revisar_procesos_produccion.verification_LLE02">
+      <field name="code">LLE02</field>
+      <field name="name">Presión llenado</field>
+      <field name="description">La presión de la salida del producto está dentro de los valores marcados.</field>
+      <field name="process_id" ref="revisar_procesos_produccion.process_LLE"></field>
+    </record>
+    <record model="revisar_procesos_produccion.verification" id="revisar_procesos_produccion.verification_LLE03">
+      <field name="code">LLE03</field>
+      <field name="name">Nivel de llenado</field>
+      <field name="description">La cantidad introducida en cada botella es la marcada.</field>
+      <field name="process_id" ref="revisar_procesos_produccion.process_LLE"></field>
+    </record>
+    <!-- Comprobaciones etiquetado -->
+    <record model="revisar_procesos_produccion.verification" id="revisar_procesos_produccion.verification_ETI01">
+      <field name="code">ETI01</field>
+      <field name="name">Rodillos etiquetas</field>
+      <field name="description">Los rodillos donde se ubican las etiquetas rotan correctamente.</field>
+      <field name="process_id" ref="revisar_procesos_produccion.process_ETI"></field>
+    </record>
+    <record model="revisar_procesos_produccion.verification" id="revisar_procesos_produccion.verification_ETI02">
+      <field name="code">ETI02</field>
+      <field name="name">Adhesión etiqueta</field>
+      <field name="description">La etiqueta se adhiere firmemente a la botella.</field>
+      <field name="process_id" ref="revisar_procesos_produccion.process_ETI"></field>
+    </record>
+    <record model="revisar_procesos_produccion.verification" id="revisar_procesos_produccion.verification_ETI03">
+      <field name="code">ETI03</field>
+      <field name="name">Colocación etiqueta</field>
+      <field name="description">Las etiquetas se colocan de forma homogénea y sin desviaciones aparentes.</field>
+      <field name="process_id" ref="revisar_procesos_produccion.process_ETI"></field>
+    </record>
+  </data>
+</odoo>

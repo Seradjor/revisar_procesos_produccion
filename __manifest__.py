@@ -20,7 +20,7 @@
     'author': "Sergio Adell",
     'website': "https://seradjor.github.io/revisar_procesos_produccion/",
 
-    #Indicamos que es una aplicación
+    # Indicamos que es una aplicación
     'application': True,
 
     # Categories can be used to filter modules in modules listing
@@ -34,9 +34,15 @@
 
     # always loaded
     'data': [
+        # Seguridad
         'security/ir.model.access.csv',
+        # Vistas
         'views/views.xml',
         'views/templates.xml',
+        # Datos de modelos
+        'data/process.xml',
+        'data/verifications.xml',
+        'data/errors.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

@@ -8,7 +8,7 @@ class error(models.Model):
     _description = 'Errores encontrados en las comprobaciones de los procesos'
     _rec_name = 'code'
 
-    code = fields.Char(size = 5, required=True, string="Código")
+    code = fields.Char(size = 8, required=True, string="Código")
     name = fields.Char(required=True, string="Nombre")
     description = fields.Text(string="Descripción")
 

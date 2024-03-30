@@ -8,7 +8,7 @@ class verification(models.Model):
     _description = 'Comprobaciones del proceso'
     _rec_name = 'code'
 
-    code = fields.Char(size = 3, required=True, string="Código")
+    code = fields.Char(size = 5, required=True, string="Código")
     name = fields.Char(required=True, string="Nombre")
     description = fields.Text(string="Descripción")
 
@@ -20,7 +20,7 @@ class verification(models.Model):
     # Relación con error
     error_ids = fields.Many2many(
         comodel_name='revisar_procesos_produccion.error',
-        relation='verification_error_rel',
+        relation='revisar_procesos_produccion_verification_error',
         column1='verification_id',
         column2='error_id',
         string="Errores")

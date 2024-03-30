@@ -1,0 +1,32 @@
+<odoo>
+  <data>
+    <!-- Errores -->
+    <record model="revisar_procesos_produccion.error" id="revisar_procesos_produccion.error_ERROR001">
+        <field name="code">ERROR001</field>
+        <field name="name">Programación</field>
+        <field name="description">Error de programación.</field>
+        <field name="verifications_ids" eval="[(6, 0, [ref('revisar_procesos_produccion.verification_LLE01'), ref('revisar_procesos_produccion.verification_LLE02'), ref('revisar_procesos_produccion.verification_LLE03'), ref('revisar_procesos_produccion.verification_ETI01')])]"/>
+    </record>
+
+    <record model="revisar_procesos_produccion.error" id="revisar_procesos_produccion.error_ERROR002">
+        <field name="code">ERROR002</field>
+        <field name="name">Piezas</field>
+        <field name="description">Piezas defectuosas o dañadas.</field>
+        <field name="verifications_ids" eval="[(6, 0, [ref('revisar_procesos_produccion.verification_LLE01'), ref('revisar_procesos_produccion.verification_LLE02'), ref('revisar_procesos_produccion.verification_LLE03')])]"/>
+    </record>
+
+    <record model="revisar_procesos_produccion.error" id="revisar_procesos_produccion.error_ERROR003">
+        <field name="code">ERROR003</field>
+        <field name="name">Ejecución</field>
+        <field name="description">No se ejecuta correctamente por parte de los trabajadores.</field>
+        <field name="verifications_ids" eval="[(6, 0, [ref('revisar_procesos_produccion.verification_ETI01'), ref('revisar_procesos_produccion.verification_ETI02'), ref('revisar_procesos_produccion.verification_ETI03')])]"/>
+    </record>
+
+    <record model="revisar_procesos_produccion.error" id="revisar_procesos_produccion.error_ERROR004">
+        <field name="code">ERROR004</field>
+        <field name="name">Otros</field>
+        <field name="description">Otros motivos, señalar.</field>
+        <field name="verifications_ids" eval="[(6, 0, [ref('revisar_procesos_produccion.verification_LLE01'), ref('revisar_procesos_produccion.verification_LLE02'), ref('revisar_procesos_produccion.verification_LLE03'), ref('revisar_procesos_produccion.verification_ETI01'), ref('revisar_procesos_produccion.verification_ETI02'), ref('revisar_procesos_produccion.verification_ETI03')])]"/>
+    </record>
+  </data>
+</odoo>
