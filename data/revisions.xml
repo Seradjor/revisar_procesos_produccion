@@ -1,0 +1,20 @@
+<odoo>
+  <data>
+    <record model="revisar_procesos_produccion.revision" id="revisar_procesos_produccion.revision_REVLLE01">
+        <field name="code">REVLLE01</field>
+        <field name="name">Revisión llenado 01</field>
+        <field name="responsable">Juan Ortíz</field>
+        <field name="state">0</field>
+        <field name="date">2024-4-17</field>
+        <field name="process_id" ref="revisar_procesos_produccion.process_LLE"></field>
+    </record>
+    <record model="revisar_procesos_produccion.revision" id="revisar_procesos_produccion.revision_REVETI01">
+        <field name="code">REVETI01</field>
+        <field name="name">Revisión etiquetado 01</field>
+        <field name="responsable">Juan Ortíz</field>
+        <field name="state">1</field>
+        <field name="date">2024-3-31</field>
+        <field name="process_id" ref="revisar_procesos_produccion.process_ETI"></field>
+    </record>
+  </data>
+</odoo>

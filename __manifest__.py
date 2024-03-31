@@ -43,6 +43,7 @@
         'data/process.xml',
         'data/verifications.xml',
         'data/errors.xml',
+        'data/revisions.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

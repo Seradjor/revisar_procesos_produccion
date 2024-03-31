@@ -8,7 +8,7 @@ class revision(models.Model):
     _description = 'Revisión de un proceso'
     _rec_name = 'code'
 
-    code = fields.Char(required=True, size=5, string="Código")
+    code = fields.Char(required=True, size=8, string="Código")
     name = fields.Char(required=True, string="Nombre")
     responsable = fields.Char()
     state = fields.Selection([('0','Iniciada'),('1','En proceso'),('2','Terminada')],default = '0', required=True, string="Estado")
