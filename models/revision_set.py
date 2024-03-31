@@ -8,7 +8,7 @@ class revision_set(models.Model):
     _description = 'Conjunto de revisiones'
     _rec_name = 'code'
 
-    code = fields.Char(required=True, size=7, string="Código")
+    code = fields.Char(required=True, size=9, string="Código")
     state = fields.Selection([('0','Iniciada'),('1','En proceso'),('2','Terminada')],default = '0', required=True, string="Estado")
     date = fields.Date(string="Fecha")    
     description = fields.Text(string="Descripción")
