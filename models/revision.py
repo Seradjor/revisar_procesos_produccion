@@ -18,9 +18,11 @@ class revision(models.Model):
     # Relación con process
     process_id = fields.Many2one('revisar_procesos_produccion.process', string="Proceso")
     process_name = fields.Char(related='process_id.name')
+    verifications_ids = fields.One2many(related='process_id.verifications_ids', string="Comprobaciones", readonly=True) # QUITAR??
 
     # Relación con revision_verification
     revision_verifications_ids = fields.One2many('revisar_procesos_produccion.revision_verification','revision_id', string="Comprobaciones")
+    revision_verification_name = fields.Text(related='revision_verifications_ids.description', string="Comprobación revisión")
 
     # Relación con revision_set
     revision_set_id = fields.Many2one('revisar_procesos_produccion.revision_set')
