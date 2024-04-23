@@ -47,12 +47,12 @@
       <field name="model">revisar_procesos_produccion.revision_verification</field>
       <field name="arch" type="xml">
         <tree editable="top"> <!-- Editable para que se cree el código y la descripción y se pueda modificar el resto -->
+          <field name="revision_id"/>
           <field name="code"/>
           <field name="description"/>
           <field name="state"/>
-          <field name="error"/>
+          <field name="errors"/>
           <field name="observation"/>
-          <field name="verifications_ids"></field>
         </tree>
       </field>
     </record>    
@@ -113,29 +113,29 @@
 
     <!-- Sin utilizar -->
 
-    <!-- <record model="ir.actions.act_window" id="revisar_procesos_produccion.action_window_revision">
+    <record model="ir.actions.act_window" id="revisar_procesos_produccion.action_window_revision">
       <field name="name">Revisión</field>
       <field name="res_model">revisar_procesos_produccion.revision</field>
       <field name="view_mode">tree,form</field>
-    </record> -->
+    </record>
 
-    <!-- <record model="ir.actions.act_window" id="revisar_procesos_produccion.action_window_revision_verification">
+    <record model="ir.actions.act_window" id="revisar_procesos_produccion.action_window_revision_verification">
       <field name="name">Comprobación revisión</field>
       <field name="res_model">revisar_procesos_produccion.revision_verification</field>
       <field name="view_mode">tree,form</field>
-    </record> -->
+    </record>
 
-    <!-- <record model="ir.actions.act_window" id="revisar_procesos_produccion.action_window_verification">
+    <record model="ir.actions.act_window" id="revisar_procesos_produccion.action_window_verification">
       <field name="name">Comprobaciones</field>
       <field name="res_model">revisar_procesos_produccion.verification</field>
       <field name="view_mode">tree,form</field>
-    </record> -->
+    </record>
 
-    <!-- <record model="ir.actions.act_window" id="revisar_procesos_produccion.action_window_error">
+    <record model="ir.actions.act_window" id="revisar_procesos_produccion.action_window_error">
       <field name="name">Errores</field>
       <field name="res_model">revisar_procesos_produccion.error</field>
       <field name="view_mode">tree,form</field>
-    </record> -->
+    </record>
 
 
     <!-- Top menu item -->
@@ -167,17 +167,17 @@
 
     <!-- Sin utilizar -->
 
-    <!-- <menuitem name="Revisión" id="revisar_procesos_produccion.revision_list" parent="revisar_procesos_produccion.menu_1"
-              action="revisar_procesos_produccion.action_window_revision"/> -->
+    <menuitem name="Revisión" id="revisar_procesos_produccion.revision_list" parent="revisar_procesos_produccion.menu_1"
+              action="revisar_procesos_produccion.action_window_revision"/>
 
-    <!-- <menuitem name="Comprobación revisión" id="revisar_procesos_produccion.revision_verification_list" parent="revisar_procesos_produccion.menu_1"
-              action="revisar_procesos_produccion.action_window_revision_verification"/> -->
+    <menuitem name="Comprobación revisión" id="revisar_procesos_produccion.revision_verification_list" parent="revisar_procesos_produccion.menu_1"
+              action="revisar_procesos_produccion.action_window_revision_verification"/>
 
-    <!-- <menuitem name="Comprobaciones" id="revisar_procesos_produccion.verification_list" parent="revisar_procesos_produccion.menu_1"
-              action="revisar_procesos_produccion.action_window_verification"/> -->
+    <menuitem name="Comprobaciones" id="revisar_procesos_produccion.verification_list" parent="revisar_procesos_produccion.menu_1"
+              action="revisar_procesos_produccion.action_window_verification"/>
 
-    <!-- <menuitem name="Errores" id="revisar_procesos_produccion.error_list" parent="revisar_procesos_produccion.menu_1"
-              action="revisar_procesos_produccion.action_window_error"/> -->
+    <menuitem name="Errores" id="revisar_procesos_produccion.error_list" parent="revisar_procesos_produccion.menu_1"
+              action="revisar_procesos_produccion.action_window_error"/>
 
 
   </data>
