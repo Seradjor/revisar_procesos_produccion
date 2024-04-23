@@ -17,5 +17,5 @@ class process(models.Model):
     revisions_ids = fields.One2many('revisar_procesos_produccion.revision','process_id', string="Revisiones")
 
     # Relación con verification
-    verifications_ids = fields.One2many('revisar_procesos_produccion.verification','process_id', string="Comprobaciones", readonly=True)
+    verifications_ids = fields.One2many('revisar_procesos_produccion.verification','process_id', string="Comprobaciones")
     

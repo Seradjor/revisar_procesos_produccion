@@ -47,36 +47,23 @@
       <field name="model">revisar_procesos_produccion.revision_verification</field>
       <field name="arch" type="xml">
         <tree editable="top">
+          <!-- <xpath expr="//style" position="after">
+            <link rel="stylesheet" href="/static/css/nombre_css"/>
+          </xpath> -->
           <field name="code"/>
           <field name="description"/>
           <field name="state"/>
-          <field name="errors"/>
+          <field name="errors" class="o_data_cell o_field_cell o_list_text"/>
           <field name="observation"/>
         </tree>
       </field>
     </record>   
 
-    <!-- Con formato --> 
-
-    <!-- <record model="ir.ui.view" id="revisar_procesos_produccion.revision_verification_window_tree">
-      <field name="name">Comprobación revisión</field>
-      <field name="model">revisar_procesos_produccion.revision_verification</field>
-      <field name="arch" type="xml">
-        <tree editable="top">
-          <field name="code" style="min-width:80px"/>
-          <field name="description" style="min-width:290px; max-width:290px"/>
-          <field name="state" style="width:120px"/>
-          <field name="errors" class="o_data_cell o_field_cell o_list_text" style="max-width:200px"/>
-          <field name="observation" style="max-width:300px; min-width:300px"/>
-        </tree>
-      </field>
-    </record> -->
-
     <record model="ir.ui.view" id="revisar_procesos_produccion.verification_window_tree">
       <field name="name">Comprobaciones</field>
       <field name="model">revisar_procesos_produccion.verification</field>
       <field name="arch" type="xml">
-        <tree>
+        <tree editable="top">
           <field name="code"/>
           <field name="name"/>
           <field name="description"/>
@@ -119,6 +106,23 @@
       </field>
     </record>
 
+    <record model="ir.ui.view" id="revisar_procesos_produccion.process_window_form">
+      <field name="name">Proceso</field>
+      <field name="model">revisar_procesos_produccion.process</field>
+      <field name="arch" type="xml">
+        <form string="">
+            <group>
+              <field name="code" style="width:100px"/>
+              <field name="name" style="width:300px"/>
+              <field name="description" style="width:700px"/>
+            </group>
+            <group string="Comprobaciones">
+              <field name="verifications_ids" style="transform: translateX(-160px)"></field>
+            </group>
+        </form>
+      </field>
+    </record>
+
     <!-- actions opening views on models -->
 
     <record model="ir.actions.act_window" id="revisar_procesos_produccion.action_window_revision_set">
@@ -139,7 +143,7 @@
       <field name="name">Última revisión</field>
       <field name="res_model">revisar_procesos_produccion.revision_set</field>
       <field name="view_mode">tree,form</field>
-      <field name="domain">[('id', '=', '2')]</field> <!-- Cambiar -->
+      <field name="domain">[('state', '=', '2')]</field> <!-- Cambiar -->
     </record>
 
     <record model="ir.actions.act_window" id="revisar_procesos_produccion.action_window_revision_set_report_historic">
