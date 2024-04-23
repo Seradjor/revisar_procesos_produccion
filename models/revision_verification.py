@@ -9,7 +9,7 @@ class revision_verification(models.Model):
     _rec_name = 'code'
 
     code = fields.Char(size=7, string="Código")
-    description = fields.Text()
+    description = fields.Text(string="Descripción")
     state = fields.Selection([('0','Correcta'),('1','Incorrecta')], string="Estado")
     errors = fields.Selection(selection='_get_errors',string='Errores')
     observation = fields.Text(string="Observaciones")
@@ -19,12 +19,6 @@ class revision_verification(models.Model):
     revision_id = fields.Many2one('revisar_procesos_produccion.revision', string="Revisión")  # PONER REQUERIDO???
     revision_name = fields.Char(related='revision_id.name')
     verifications_ids = fields.One2many(related='revision_id.verifications_ids', string="Comprobaciones", readonly=True) # QUITAR??
-
-    # Registro comprobaciones revisión:
-    """ entrada = 1
-    verifications = self.env['revisar_procesos_produccion.verification'].search([])
-    for i in verifications:
-        ns = self.env['revisar_procesos_produccion.revision_verification'].create({'code':entrada,'description':i.name}) """
 
 
     # Carga de errores del modelo error para las opciones a elegir en el campo errors

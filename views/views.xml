@@ -46,8 +46,7 @@
       <field name="name">Comprobación revisión</field>
       <field name="model">revisar_procesos_produccion.revision_verification</field>
       <field name="arch" type="xml">
-        <tree editable="top"> <!-- Editable para que se cree el código y la descripción y se pueda modificar el resto -->
-          <field name="revision_id"/>
+        <tree editable="top">
           <field name="code"/>
           <field name="description"/>
           <field name="state"/>
@@ -55,7 +54,23 @@
           <field name="observation"/>
         </tree>
       </field>
-    </record>    
+    </record>   
+
+    <!-- Con formato --> 
+
+    <!-- <record model="ir.ui.view" id="revisar_procesos_produccion.revision_verification_window_tree">
+      <field name="name">Comprobación revisión</field>
+      <field name="model">revisar_procesos_produccion.revision_verification</field>
+      <field name="arch" type="xml">
+        <tree editable="top">
+          <field name="code" style="min-width:80px"/>
+          <field name="description" style="min-width:290px; max-width:290px"/>
+          <field name="state" style="width:120px"/>
+          <field name="errors" class="o_data_cell o_field_cell o_list_text" style="max-width:200px"/>
+          <field name="observation" style="max-width:300px; min-width:300px"/>
+        </tree>
+      </field>
+    </record> -->
 
     <record model="ir.ui.view" id="revisar_procesos_produccion.verification_window_tree">
       <field name="name">Comprobaciones</field>
@@ -81,6 +96,28 @@
       </field>
     </record>
 
+
+    <!-- Formularios -->
+
+    <record model="ir.ui.view" id="revisar_procesos_produccion.revision_window_form">
+      <field name="name">Revisión</field>
+      <field name="model">revisar_procesos_produccion.revision</field>
+      <field name="arch" type="xml">
+        <form string="">
+            <group>
+              <field name="code"/>
+              <field name="name"/>
+              <field name="responsable"/>
+              <field name="state"/>
+              <field name="date"/>
+              <field name="process_id"></field>
+            </group>
+            <group string="Comprobaciones">
+              <field name="revision_verifications_ids" style="transform: translateX(-160px)"></field>
+            </group>
+        </form>
+      </field>
+    </record>
 
     <!-- actions opening views on models -->
 
@@ -113,29 +150,29 @@
 
     <!-- Sin utilizar -->
 
-    <record model="ir.actions.act_window" id="revisar_procesos_produccion.action_window_revision">
+    <!-- <record model="ir.actions.act_window" id="revisar_procesos_produccion.action_window_revision">
       <field name="name">Revisión</field>
       <field name="res_model">revisar_procesos_produccion.revision</field>
       <field name="view_mode">tree,form</field>
-    </record>
+    </record> -->
 
-    <record model="ir.actions.act_window" id="revisar_procesos_produccion.action_window_revision_verification">
+    <!-- <record model="ir.actions.act_window" id="revisar_procesos_produccion.action_window_revision_verification">
       <field name="name">Comprobación revisión</field>
       <field name="res_model">revisar_procesos_produccion.revision_verification</field>
       <field name="view_mode">tree,form</field>
-    </record>
+    </record> -->
 
-    <record model="ir.actions.act_window" id="revisar_procesos_produccion.action_window_verification">
+    <!-- <record model="ir.actions.act_window" id="revisar_procesos_produccion.action_window_verification">
       <field name="name">Comprobaciones</field>
       <field name="res_model">revisar_procesos_produccion.verification</field>
       <field name="view_mode">tree,form</field>
-    </record>
+    </record> -->
 
-    <record model="ir.actions.act_window" id="revisar_procesos_produccion.action_window_error">
+    <!-- <record model="ir.actions.act_window" id="revisar_procesos_produccion.action_window_error">
       <field name="name">Errores</field>
       <field name="res_model">revisar_procesos_produccion.error</field>
       <field name="view_mode">tree,form</field>
-    </record>
+    </record> -->
 
 
     <!-- Top menu item -->
@@ -167,17 +204,17 @@
 
     <!-- Sin utilizar -->
 
-    <menuitem name="Revisión" id="revisar_procesos_produccion.revision_list" parent="revisar_procesos_produccion.menu_1"
-              action="revisar_procesos_produccion.action_window_revision"/>
+    <!-- <menuitem name="Revisión" id="revisar_procesos_produccion.revision_list" parent="revisar_procesos_produccion.menu_1"
+              action="revisar_procesos_produccion.action_window_revision"/> -->
 
-    <menuitem name="Comprobación revisión" id="revisar_procesos_produccion.revision_verification_list" parent="revisar_procesos_produccion.menu_1"
-              action="revisar_procesos_produccion.action_window_revision_verification"/>
+    <!-- <menuitem name="Comprobación revisión" id="revisar_procesos_produccion.revision_verification_list" parent="revisar_procesos_produccion.menu_1"
+              action="revisar_procesos_produccion.action_window_revision_verification"/> -->
 
-    <menuitem name="Comprobaciones" id="revisar_procesos_produccion.verification_list" parent="revisar_procesos_produccion.menu_1"
-              action="revisar_procesos_produccion.action_window_verification"/>
+    <!-- <menuitem name="Comprobaciones" id="revisar_procesos_produccion.verification_list" parent="revisar_procesos_produccion.menu_1"
+              action="revisar_procesos_produccion.action_window_verification"/> -->
 
-    <menuitem name="Errores" id="revisar_procesos_produccion.error_list" parent="revisar_procesos_produccion.menu_1"
-              action="revisar_procesos_produccion.action_window_error"/>
+    <!-- <menuitem name="Errores" id="revisar_procesos_produccion.error_list" parent="revisar_procesos_produccion.menu_1"
+              action="revisar_procesos_produccion.action_window_error"/> -->
 
 
   </data>

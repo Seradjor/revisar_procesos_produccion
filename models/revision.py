@@ -21,7 +21,7 @@ class revision(models.Model):
     verifications_ids = fields.One2many(related='process_id.verifications_ids', string="Comprobaciones", readonly=True) # QUITAR??
 
     # Relación con revision_verification
-    revision_verifications_ids = fields.One2many('revisar_procesos_produccion.revision_verification','revision_id', string="Comprobaciones")
+    revision_verifications_ids = fields.One2many('revisar_procesos_produccion.revision_verification','revision_id', string=" ")
     revision_verification_name = fields.Text(related='revision_verifications_ids.description', string="Comprobación revisión")
 
     # Relación con revision_set
