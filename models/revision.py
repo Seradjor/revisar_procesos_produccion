@@ -28,15 +28,15 @@ class revision(models.Model):
     revision_set_id = fields.Many2one('revisar_procesos_produccion.revision_set')
     revision_set_code = fields.Char(related='revision_set_id.code')
     
-    @api.onchange('state')
+    # Creación de comprobaciones de la revision, rescatando las comprobaciones de proceso a revisar.
+    @api.onchange('process_id')
     def _on_state_change(self):
-        if self.state == '1':  # Si el estado cambia a 'En proceso'
-            # Buscar todos los registros de verificación asociados al mismo proceso
-            verifications = self.env['revisar_procesos_produccion.verification'].search([('process_id.code', '=', self.process_id.code)])
-            # Imprimir la descripción de cada registro de verificación
-            for verification in verifications:
-                print("Descripción de verificación:", verification.description)
-                self.env['revisar_procesos_produccion.revision_verification'].create({
-                    'revision_id': self.id,
-                    'description': verification.description
-                })
+        # Buscar todos los registros de verificación asociados al mismo proceso
+        verifications = self.env['revisar_procesos_produccion.verification'].search([('process_id.code', '=', self.process_id.code)])
+        # Imprimir la descripción de cada registro de verificación
+        for verification in verifications:
+            print("Descripción de verificación:", verification.description)
+            self.env['revisar_procesos_produccion.revision_verification'].create({
+                'revision_id': self.id,
+                'description': verification.description
+            })
