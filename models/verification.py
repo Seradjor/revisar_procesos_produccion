@@ -8,7 +8,8 @@ class verification(models.Model):
     _description = 'Comprobaciones del proceso'
     _rec_name = 'code'
 
-    code = fields.Char(size = 5, required=True, string="Código")
+
+    code = fields.Char(required=True, size=5, string="Código")
     name = fields.Char(required=True, string="Nombre")
     description = fields.Text(string="Descripción")
 
@@ -24,3 +25,5 @@ class verification(models.Model):
         column1='verification_id',
         column2='error_id',
         string="Errores")
+    
+            

@@ -63,7 +63,7 @@
       <field name="name">Comprobaciones</field>
       <field name="model">revisar_procesos_produccion.verification</field>
       <field name="arch" type="xml">
-        <tree editable="top">
+        <tree editable="bottom">
           <field name="code"/>
           <field name="name"/>
           <field name="description"/>
