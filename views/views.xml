@@ -91,17 +91,21 @@
       <field name="model">revisar_procesos_produccion.revision</field>
       <field name="arch" type="xml">
         <form string="">
+          <group>
             <group>
-              <field name="code"/>
+              <field name="process_id"/>
               <field name="name"/>
               <field name="responsable"/>
+            </group>
+            <group>
+              <field name="code" readonly="True"/>
               <field name="state"/>
               <field name="date"/>
-              <field name="process_id"></field>
             </group>
-            <group string="Comprobaciones">
-              <field name="revision_verifications_ids" style="transform: translateX(-160px)"></field>
-            </group>
+          </group>
+          <group string="Comprobaciones">
+            <field name="revision_verifications_ids" style="transform: translateX(-160px)"></field>
+          </group>
         </form>
       </field>
     </record>

@@ -8,11 +8,12 @@ class revision_verification(models.Model):
     _description = 'Comprobaciones de una revisión'
     _rec_name = 'code'
 
-    code = fields.Char(size=7, string="Código")
+    code = fields.Char(string="Código")
     description = fields.Text(string="Descripción")
     state = fields.Selection([('0','Correcta'),('1','Incorrecta')], string="Estado")
     errors = fields.Selection(selection='_get_errors',string='Errores')
     observation = fields.Text(string="Observaciones")
+    code_revision = fields.Char()
 
 
     # Relación con revision
