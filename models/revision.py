@@ -29,6 +29,7 @@ class revision(models.Model):
     revision_set_id = fields.Many2one('revisar_procesos_produccion.revision_set')
     revision_set_code = fields.Char(related='revision_set_id.code')
 
+    # Generar código predeterminado
     @api.model
     def _generate_revision_number(self):
         year = str(datetime.date.today().year)
@@ -39,7 +40,7 @@ class revision(models.Model):
             new_number = last_number + 1
             new_code = "REV" + year + str(new_number).zfill(3)  # Rellenar con ceros a la izquierda
         else:
-            new_code = "REV" + year + '001'
+            new_code = "REV" + year + "001"
         return new_code
 
 

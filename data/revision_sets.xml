@@ -1,19 +1,19 @@
 <odoo>
   <data>
-    <record model="revisar_procesos_produccion.revision_set" id="revisar_procesos_produccion.revision_set_CONJREV01">
-        <field name="code">CONJREV01</field>
+    <record model="revisar_procesos_produccion.revision_set" id="revisar_procesos_produccion.revision_set_CONJ202401">
+        <field name="code">CONJ202401</field>
         <field name="state">0</field>
         <field name="date">2024-4-20</field>
         <field name="description">Revisión del proceso de llenado y etiquetado.</field>
-        <field name="revisions_ids" eval="[(6, 0, [ref('revisar_procesos_produccion.revision_REVLLE01'), ref('revisar_procesos_produccion.revision_REVETI01')])]"></field>
+        <field name="revisions_ids" eval="[(6, 0, [ref('revisar_procesos_produccion.revision_REV2024001'), ref('revisar_procesos_produccion.revision_REV2024002')])]"></field>
     </record>
 
-    <record model="revisar_procesos_produccion.revision_set" id="revisar_procesos_produccion.revision_set_CONJREV02">
-        <field name="code">CONJREV02</field>
+    <record model="revisar_procesos_produccion.revision_set" id="revisar_procesos_produccion.revision_set_CONJ202402">
+        <field name="code">CONJ202402</field>
         <field name="state">1</field>
         <field name="date">2024-4-17</field>
         <field name="description">Revisión del proceso de llenado.</field>
-        <field name="revisions_ids" eval="[(6, 0, [ref('revisar_procesos_produccion.revision_REVLLE01')])]"></field>
+        <field name="revisions_ids" eval="[(6, 0, [ref('revisar_procesos_produccion.revision_REV2024001')])]"></field>
     </record>
   </data>
 </odoo>

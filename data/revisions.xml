@@ -1,6 +1,6 @@
 <odoo>
   <data>
-    <record model="revisar_procesos_produccion.revision" id="revisar_procesos_produccion.revision_REVLLE01">
+    <record model="revisar_procesos_produccion.revision" id="revisar_procesos_produccion.revision_REV2024001">
         <field name="code">REV2024001</field>
         <field name="name">Revisión llenado 01</field>
         <field name="responsable">Juan Ortíz</field>
@@ -8,7 +8,7 @@
         <field name="date">2024-4-17</field>
         <field name="process_id" ref="revisar_procesos_produccion.process_LLE"></field>
     </record>
-    <record model="revisar_procesos_produccion.revision" id="revisar_procesos_produccion.revision_REVETI01">
+    <record model="revisar_procesos_produccion.revision" id="revisar_procesos_produccion.revision_REV2024002">
         <field name="code">REV2024002</field>
         <field name="name">Revisión etiquetado 01</field>
         <field name="responsable">Juan Ortíz</field>
