@@ -1,0 +1,76 @@
+<odoo>
+  <!-- name nombre de la accion -->
+  <record id="revision_set_pdf_report" model="ir.actions.report">
+    <field name="name">Ficha conjunto revisión</field>
+    <field name="model">revisar_procesos_produccion.revision_set</field>
+    <field name="report_type">qweb-pdf</field> 
+    <field name="report_name">revisar_procesos_produccion.report_revision_set</field> <!-- Nombre de la plantilla -->
+    <field name="binding_model_id" ref="model_revisar_procesos_produccion_revision_set"/> <!-- Modelo donde tiene que aparecer para ejecutar el informe (modificado en etiqueta template)-->
+    <field name="binding_type">report</field>
+    <field name="binding_view_types">list,form</field> <!-- Dónde quiero que aparezca -->
+    <field name="print_report_name">'Ficha conjunto revisiones'</field> <!-- Nombre del fichero -->
+  </record>
+ 
+    
+  <template id="revisar_procesos_produccion.report_revision_set">
+    <t t-call="web.html_container">
+        <!-- por si se mandará a imprimir varios conjuntos de revisiones, utilizamos t-foreach y hacemos una página por cada uno de ellos -->
+        <t t-foreach="docs" t-as="record">
+            <t t-call="web.external_layout">
+                <xpath expr="//style" position="after">
+                    <link rel="stylesheet" href="/revisar_procesos_produccion/static/src/css/revision_set_report.css"/>
+                </xpath>
+                <style>
+
+                </style>
+                <div class="page">
+                    <h1>Comprobación de revisiones</h1>
+                    <h5><span><strong>Código: </strong></span><t t-esc="record.code"/></h5>
+                    <p><span>Fecha: </span><t t-esc="record.date"/></p>
+                    <p><span>Descripción: </span><t t-esc="record.description"/></p>
+                    <p><span>Fecha cierre: </span><t t-esc="record.write_date"/></p>
+
+                    <h2>Revisiones</h2>
+
+                    <t t-foreach="record.revisions_ids" t-as="revision">
+                        <h5><span><strong>Código: </strong></span><t t-esc="revision.code"/></h5>
+                        <p><span>Nombre: </span><t t-esc="revision.name"/></p>
+                        <p><span>Proceso: </span><t t-esc="revision.process_name"/></p>
+                        <p><span>Responsable: </span><t t-esc="revision.responsable"/></p>
+
+                        <h3>Comprobaciones</h3>
+
+                        <table>
+                            <tr>
+                                <th>Código</th>
+                                <th>Descripción</th>
+                                <th>Estado</th>
+                                <th>Errores</th>
+                                <th>Observaciones</th>
+                            </tr>
+
+                        <t t-foreach="record.revisions_ids.revision_verifications_ids" t-as="revision_verification">
+                            <t t-if="revision_verification.revision_id.code == revision.code">
+                            <tr>
+                                <td><t t-esc="revision_verification.code"/></td>
+                                <td><t t-esc="revision_verification.description"/></td>
+                                <td><t t-esc="revision_verification.state == '0' and 'Correcta' or 'Incorrecta'"/></td>
+                                <td><t t-esc="revision_verification.errors"/></td>
+                                <td><t t-esc="revision_verification.observation"/></td>
+                            </tr>
+                            </t>
+                        </t>
+
+                        </table>
+
+
+                    </t>
+
+                </div>
+            </t>
+        </t>
+    </t>
+  </template>
+
+</odoo>
+

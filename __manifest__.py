@@ -45,6 +45,8 @@
         'data/errors.xml',
         'data/revisions.xml',
         'data/revision_sets.xml',
+        # reports
+        'reports/revision_set_report.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

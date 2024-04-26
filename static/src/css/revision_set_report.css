@@ -1,0 +1,23 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    background-color: lightgrey;
+}
+
+h1{
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+table{
+    margin-bottom: 20px;
+}
+
+
+th, td{
+    border:1px solid black;
+    padding: 5px;
+}
+

@@ -6,11 +6,12 @@
       <field name="name">Realizar revisión</field>
       <field name="model">revisar_procesos_produccion.revision_set</field>
       <field name="arch" type="xml">
-        <tree>
+        <tree default_order="write_date desc">
           <field name="code"/>
           <field name="state"/>
           <field name="date"/>
           <field name="description"/>
+          <field name="write_date"></field>
         </tree>
       </field>
     </record>
@@ -147,13 +148,15 @@
       <field name="name">Última revisión</field>
       <field name="res_model">revisar_procesos_produccion.revision_set</field>
       <field name="view_mode">tree,form</field>
-      <field name="domain">[('state', '=', '2')]</field> <!-- Cambiar -->
+      <field name="domain">[('state', '=', '2')]</field>
+      <field name="limit">1</field>
     </record>
 
     <record model="ir.actions.act_window" id="revisar_procesos_produccion.action_window_revision_set_report_historic">
       <field name="name">Histórico</field>
       <field name="res_model">revisar_procesos_produccion.revision_set</field>
       <field name="view_mode">tree,form</field>
+      <field name="domain">[('state', '=', '2')]</field> 
     </record>
 
     <!-- Sin utilizar -->
