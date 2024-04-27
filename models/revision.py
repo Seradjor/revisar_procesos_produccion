@@ -48,11 +48,18 @@ class revision(models.Model):
     @api.onchange('process_id')
     def _process_change(self):
         if self.process_id:
-            # Borrar verifications si ya hubiese seleccionado un proceso
-            self.revision_verifications_ids.unlink()
+            self.ensure_one()
 
             # Asignar el proceso seleccionado
             self.process_id = self.process_id
+
+            # Rellenar campo name
+            print(self.process_name)
+            self.name = f"Revisión proceso de {(self.process_name).lower()}"
+            print(self.name)
+
+            # Borrar verifications si ya hubiese seleccionado un proceso
+            self.revision_verifications_ids.unlink()
 
             # Buscar todos los registros de verificación asociados al mismo proceso
             verifications = self.env['revisar_procesos_produccion.verification'].search([('process_id.code', '=', self.process_id.code)])
@@ -64,8 +71,4 @@ class revision(models.Model):
                     'code_revision':self.code,
                     'code':verification.code,
                     'description': verification.description
-                })
-
-            # Rellenar campo name
-            self.name = f"Revisión proceso de {(self.process_name).lower()}"
-        
+                })        

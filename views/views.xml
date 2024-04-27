@@ -11,7 +11,7 @@
           <field name="state"/>
           <field name="date"/>
           <field name="description"/>
-          <field name="write_date"></field>
+          <field name="write_date" invisible="1"></field>
         </tree>
       </field>
     </record>
@@ -47,14 +47,14 @@
       <field name="name">Comprobación revisión</field>
       <field name="model">revisar_procesos_produccion.revision_verification</field>
       <field name="arch" type="xml">
-        <tree editable="top">
+        <tree editable="bottom">
           <!-- <xpath expr="//style" position="after">
             <link rel="stylesheet" href="/static/css/nombre_css"/>
           </xpath> -->
           <field name="code"/>
           <field name="description"/>
           <field name="state"/>
-          <field name="errors" class="o_data_cell o_field_cell o_list_text"/>
+          <field name="errors" class="o_list_text"/>
           <field name="observation"/>
         </tree>
       </field>
