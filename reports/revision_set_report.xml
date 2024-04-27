@@ -55,14 +55,13 @@
                                 <td><t t-esc="revision_verification.code"/></td>
                                 <td><t t-esc="revision_verification.description"/></td>
                                 <td><t t-esc="revision_verification.state == '0' and 'Correcta' or 'Incorrecta'"/></td>
-                                <td><t t-esc="revision_verification.errors"/></td>
+                                <td><t t-esc="revision_verification.errors == '0' and 'Error de programación' or revision_verification.errors == '1' and 'Pìezas defectuosas o dañadas.' or revision_verification.errors == '2' and 'No se ejecuta correctamente por parte de los trabajadores' or revision_verification.errors == '3' and 'Otros motivos, señalar.'"/></td>
                                 <td><t t-esc="revision_verification.observation"/></td>
                             </tr>
                             </t>
                         </t>
 
                         </table>
-
 
                     </t>
 

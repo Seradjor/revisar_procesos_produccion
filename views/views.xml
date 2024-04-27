@@ -87,6 +87,30 @@
 
     <!-- Formularios -->
 
+    <record model="ir.ui.view" id="revisar_procesos_produccion.revision_set_window_form">
+      <field name="name">Conjunto de revisiones</field>
+      <field name="model">revisar_procesos_produccion.revision_set</field>
+      <field name="arch" type="xml">
+        <form string="">
+          <group>
+            <group>
+              <field name="code" readonly="True"/>
+              <field name="date" style="width:100px"/>
+            </group>
+            <group>
+              <field name="state" style="width:100px"/>
+            </group>
+          </group>
+          <group>
+            <field name="description"/>
+          </group>
+          <group string="Revisiones">
+            <field name="revisions_ids" style="transform: translateX(-160px)"></field>
+          </group>
+        </form>
+      </field>
+    </record>
+
     <record model="ir.ui.view" id="revisar_procesos_produccion.revision_window_form">
       <field name="name">Revisión</field>
       <field name="model">revisar_procesos_produccion.revision</field>
