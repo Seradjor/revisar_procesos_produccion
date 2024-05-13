@@ -13,4 +13,4 @@ A continuación se puede visalizar un pequeño vídeo explicativo del funcionami
 
 ## Vídeo explicativo
 
-![Video manual usuario](../videos/revisar_procesos_produccion.mp4)
+![Video manual usuario]()
