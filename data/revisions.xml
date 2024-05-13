@@ -5,16 +5,24 @@
         <field name="name">Revisión llenado 01</field>
         <field name="responsable">Juan Ortíz</field>
         <field name="state">0</field>
-        <field name="date">2024-4-17</field>
-        <field name="process_id" ref="revisar_procesos_produccion.process_LLE"></field>
+        <field name="date">2024-5-20</field>
+        <field name="process_id" ref="revisar_procesos_produccion.process_LLE"></field>  <!-- En Odoo, será necesario seleccionar "de nuevo" el proceso para que se carguen las comprobaciones a revisar, desde data no se cargan -->
     </record>
     <record model="revisar_procesos_produccion.revision" id="revisar_procesos_produccion.revision_REV2024002">
         <field name="code">REV2024002</field>
         <field name="name">Revisión etiquetado 01</field>
         <field name="responsable">Juan Ortíz</field>
+        <field name="state">0</field>
+        <field name="date">2024-5-20</field>
+        <field name="process_id" ref="revisar_procesos_produccion.process_ETI"></field>  <!-- En Odoo, será necesario seleccionar "de nuevo" el proceso para que se carguen las comprobaciones a revisar, desde data no se cargan -->
+    </record>
+    <record model="revisar_procesos_produccion.revision" id="revisar_procesos_produccion.revision_REV2024003">
+        <field name="code">REV2024003</field>
+        <field name="name">Revisión llenado 02</field>
+        <field name="responsable">Juan Ortíz</field>
         <field name="state">1</field>
-        <field name="date">2024-3-31</field>
-        <field name="process_id" ref="revisar_procesos_produccion.process_ETI"></field>
+        <field name="date">2024-5-21</field>
+        <field name="process_id" ref="revisar_procesos_produccion.process_LLE"></field>  <!-- En Odoo, será necesario seleccionar "de nuevo" el proceso para que se carguen las comprobaciones a revisar, desde data no se cargan -->
     </record>
   </data>
 </odoo>

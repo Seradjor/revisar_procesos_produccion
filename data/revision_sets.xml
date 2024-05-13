@@ -3,17 +3,17 @@
     <record model="revisar_procesos_produccion.revision_set" id="revisar_procesos_produccion.revision_set_CONJ202401">
         <field name="code">CONJ202401</field>
         <field name="state">0</field>
-        <field name="date">2024-4-20</field>
+        <field name="date">2024-5-20</field>
         <field name="description">Revisión del proceso de llenado y etiquetado.</field>
-        <field name="revisions_ids" eval="[(6, 0, [ref('revisar_procesos_produccion.revision_REV2024001'), ref('revisar_procesos_produccion.revision_REV2024002')])]"></field>
+        <field name="revisions_ids" eval="[(6, 0, [ref('revisar_procesos_produccion.revision_REV2024001'), ref('revisar_procesos_produccion.revision_REV2024002')])]"></field>  
     </record>
 
     <record model="revisar_procesos_produccion.revision_set" id="revisar_procesos_produccion.revision_set_CONJ202402">
         <field name="code">CONJ202402</field>
         <field name="state">1</field>
-        <field name="date">2024-4-17</field>
+        <field name="date">2024-5-21</field>
         <field name="description">Revisión del proceso de llenado.</field>
-        <field name="revisions_ids" eval="[(6, 0, [ref('revisar_procesos_produccion.revision_REV2024001')])]"></field>
+        <field name="revisions_ids" eval="[(6, 0, [ref('revisar_procesos_produccion.revision_REV2024003')])]"></field>
     </record>
   </data>
 </odoo>
