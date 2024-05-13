@@ -13,6 +13,7 @@ hero_height: is-fullwidth
 - [Revisar procesos producción.](pages/revisar_procesos_produccion)
 - [Manual usuario.](pages/revisar_procesos_produccion_manual)
 
+
 ## Recursos utilizados
 
 ### Imágenes

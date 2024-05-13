@@ -1,2 +1,5 @@
 - name: Revisar procesos producción
   link: /pages/revisar_procesos_produccion
+
+- name: Manual usuario
+  link: /pages/revisar_procesos_produccion_manual
