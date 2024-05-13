@@ -9,8 +9,8 @@ hero_height: is-fullwidth
 
 ## Descripción detallada
 
-A continuación se puede visalizar un pequeño vídeo explicativo del funcionamiento a nivel usuario del módulo revisar_procesos_produccion.
+A continuación se puede visualizar un pequeño vídeo explicativo del funcionamiento a nivel usuario del módulo revisar_procesos_produccion.
 
 ## Vídeo explicativo
 
-https://youtu.be/MTQGyUJCuKk?si=egvqh07IjxKl-4gi
+https://youtu.be/MTQGyUJCuKk
